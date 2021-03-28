@@ -32,7 +32,7 @@ public class WeatherFacilityController {
     @GetMapping("getAllFacility")
     public RestResponse<Object> getAllSite(){
         List<WeatherFacility> list = siteService.list();
-        return RestResponse.success("查找成功",list);
+        return RestResponse.success("查找成功!!!",list);
     }
 
     @PostMapping("addFacility")
