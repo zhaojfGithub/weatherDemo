@@ -2,6 +2,10 @@ package com.zhao.weather.weather_demo.mapper;
 
 import com.zhao.weather.weather_demo.entity.WeatherFacility;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.zhao.weather.weather_demo.entity.WeatherFacilityQuery;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +17,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface WeatherFacilityMapper extends BaseMapper<WeatherFacility> {
 
+    List<WeatherFacilityQuery> getFacility(@Param("id") Long id);
 }

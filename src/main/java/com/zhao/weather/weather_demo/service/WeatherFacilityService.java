@@ -2,6 +2,10 @@ package com.zhao.weather.weather_demo.service;
 
 import com.zhao.weather.weather_demo.entity.WeatherFacility;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.zhao.weather.weather_demo.entity.WeatherFacilityQuery;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +17,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface WeatherFacilityService extends IService<WeatherFacility> {
 
+    List<WeatherFacilityQuery> getFacility(@Param("id") Long id);
 }

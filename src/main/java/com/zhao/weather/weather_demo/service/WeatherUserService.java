@@ -2,7 +2,6 @@ package com.zhao.weather.weather_demo.service;
 
 import com.zhao.weather.weather_demo.entity.WeatherUser;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.zhao.weather.weather_demo.entity.WeatherUserColler;
 
 /**
  * <p>

@@ -1,6 +1,6 @@
 package com.zhao.weather.weather_demo.mapper;
 
-import com.zhao.weather.weather_demo.entity.WeatherUserColler;
+import com.zhao.weather.weather_demo.entity.WeatherUserFacility;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author zhao
  * @since 2021-03-08
  */
-public interface WeatherUserCollerMapper extends BaseMapper<WeatherUserColler> {
+public interface WeatherUserFacilityMapper extends BaseMapper<WeatherUserFacility> {
 
 }

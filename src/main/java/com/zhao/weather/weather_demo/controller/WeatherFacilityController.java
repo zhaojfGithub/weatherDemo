@@ -3,6 +3,7 @@ package com.zhao.weather.weather_demo.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.zhao.weather.weather_demo.entity.WeatherFacility;
+import com.zhao.weather.weather_demo.entity.WeatherFacilityQuery;
 import com.zhao.weather.weather_demo.entity.WeatherSite;
 import com.zhao.weather.weather_demo.service.WeatherFacilityService;
 import com.zhao.weather.weather_demo.service.WeatherSiteService;
@@ -30,11 +31,18 @@ public class WeatherFacilityController {
     private WeatherFacilityService siteService;
 
     @GetMapping("getAllFacility")
-    public RestResponse<Object> getAllSite(){
-        List<WeatherFacility> list = siteService.list();
+    public RestResponse<Object> getAllSite(@RequestParam ("id") Long id ){
+        if (id==null){
+            System.out.println("null");
+        }
+        List<WeatherFacilityQuery> list = siteService.getFacility(id);
         return RestResponse.success("查找成功!!!",list);
     }
 
+    /**
+     * 管理员添加全部设备
+     * @return
+     */
     @PostMapping("addFacility")
     public RestResponse<Object> addFacility(@RequestParam ("facility_uuid") String facility_uuid,
                                             @RequestParam ("facility_site") String facility_site){

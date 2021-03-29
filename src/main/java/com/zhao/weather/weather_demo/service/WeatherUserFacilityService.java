@@ -1,6 +1,6 @@
 package com.zhao.weather.weather_demo.service;
 
-import com.zhao.weather.weather_demo.entity.WeatherUserColler;
+import com.zhao.weather.weather_demo.entity.WeatherUserFacility;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author zhao
  * @since 2021-03-08
  */
-public interface WeatherUserCollerService extends IService<WeatherUserColler> {
+public interface WeatherUserFacilityService extends IService<WeatherUserFacility> {
+
+
 
 }
