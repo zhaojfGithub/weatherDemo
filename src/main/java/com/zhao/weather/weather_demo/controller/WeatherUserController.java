@@ -69,5 +69,28 @@ public class WeatherUserController {
         return RestResponse.success("登录成功", list);
     }
 
+    /**
+     * 根据userId查询个人信息
+     */
+
+    @GetMapping("user")
+    public RestResponse<Object> user(@RequestParam("userId") Long userId){
+        WeatherUser entity = weatherUserService.getById(userId);
+        return RestResponse.success("查询成功",entity);
+    }
+
+    /**
+     * 根据userId修改个人信息
+     */
+    @PostMapping("updateUser")
+    public RestResponse<Object> updateUser(@RequestBody WeatherUser entity){
+
+        if (weatherUserService.saveOrUpdate(entity)){
+            return RestResponse.success("修改成功");
+        }else {
+            return RestResponse.fail("修改失败");
+        }
+    }
+
 }
 
