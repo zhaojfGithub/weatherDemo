@@ -28,7 +28,7 @@ public class WeatherFeedbackController {
     private WeatherFeedbackService service;
 
     @PostMapping("addFeedback")
-    public RestResponse<Object> addFeedback(@RequestParam("user_id") Long userId,
+    public RestResponse<Object> addFeedback(@RequestParam("userId") Long userId,
                                             @RequestParam("feedback") String feedback){
         WeatherFeedback weatherFeedback = new WeatherFeedback();
         weatherFeedback.setUserId(userId);
