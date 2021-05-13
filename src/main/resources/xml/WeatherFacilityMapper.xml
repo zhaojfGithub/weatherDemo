@@ -8,7 +8,24 @@
             weather_user_facility.collect
         FROM
             weather_facility
-                LEFT JOIN weather_user_facility ON weather_facility.facility_id = weather_user_facility.facility_id
+                LEFT JOIN weather_user_facility
+                    ON weather_facility.facility_id = weather_user_facility.facility_id
                 AND weather_user_facility.id = #{id}
+    </select>
+
+    <select id="updateData" resultType="com.zhao.weather.weather_demo.entity.WeatherFacilityQuery">
+        UPDATE weather_facility SET weather_facility.text = #{text}
+        WHERE weather_facility.facility_id = #{facility_id}
+    </select>
+    
+    <select id="getUserFacility" resultType="com.zhao.weather.weather_demo.entity.WeatherFacilityQuery">
+        SELECT
+            weather_facility.*,
+            weather_user_facility.collect
+        FROM
+            weather_facility
+                LEFT JOIN weather_user_facility
+                          ON weather_facility.facility_id = weather_user_facility.facility_id
+        WHERE weather_user_facility.id = #{id} AND weather_user_facility.collect = 1
     </select>
 </mapper>

@@ -18,4 +18,8 @@ import java.util.List;
 public interface WeatherFacilityService extends IService<WeatherFacility> {
 
     List<WeatherFacilityQuery> getFacility(@Param("id") Long id);
+
+    void updateData(@Param("facility_id") Long facilityId , @Param("text") String text);
+
+    List<WeatherFacilityQuery> getUserFacility(@Param("id") Long id);
 }

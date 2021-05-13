@@ -32,6 +32,11 @@ public class WeatherFacilityQuery implements Serializable {
     private Integer collect;
 
     /**
+     * 内容
+     */
+    private String text;
+
+    /**
      * 设备uuid
      */
     private String facilityUuid;

@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.zhao.weather.weather_demo.entity.WeatherFacility;
 import com.zhao.weather.weather_demo.entity.WeatherFacilityQuery;
 import com.zhao.weather.weather_demo.entity.WeatherSite;
+import com.zhao.weather.weather_demo.entity.WeatherUser;
 import com.zhao.weather.weather_demo.service.WeatherFacilityService;
 import com.zhao.weather.weather_demo.service.WeatherSiteService;
 import com.zhao.weather.weather_demo.utils.RestResponse;
@@ -39,6 +40,12 @@ public class WeatherFacilityController {
         return RestResponse.success("查找成功!!!",list);
     }
 
+    @GetMapping("getUserFacility")
+    public RestResponse<Object> getUserFacility(@RequestParam("id") Long id){
+        List<WeatherFacilityQuery> list = siteService.getUserFacility(id);
+        return RestResponse.success("查找成功!!!",list);
+    }
+
     /**
      * 管理员添加全部设备
      * @return
@@ -53,6 +60,13 @@ public class WeatherFacilityController {
             return RestResponse.success("加入成功");
         }
         return RestResponse.fail("加入失败，请联系开发者!!!");
+    }
+
+    @PostMapping("updateData")
+    public RestResponse<Object> updateData(@RequestParam ("facility_id") Long facilityId,
+                                           @RequestParam ("text") String text){
+        siteService.updateData(facilityId,text);
+        return RestResponse.success("修改成功",200);
     }
 }
 

@@ -24,4 +24,14 @@ public class WeatherFacilityServiceImpl extends ServiceImpl<WeatherFacilityMappe
     public List<WeatherFacilityQuery> getFacility(Long id) {
         return baseMapper.getFacility(id);
     }
+
+    @Override
+    public void updateData(Long facilityId, String text) {
+        baseMapper.updateData(facilityId,text);
+    }
+
+    @Override
+    public List<WeatherFacilityQuery> getUserFacility(Long id) {
+        return baseMapper.getUserFacility(id);
+    }
 }
